@@ -1,4 +1,4 @@
 # Django
 Python Django Projeto
 
-<img src="https://img2.gratispng.com/20180805/hho/kisspng-django-python-computer-icons-logo-portable-network-django-python-recruitment-task-1-5b6748f3586dc6.0530431515334955393622.jpg">
+<img src="https://cdn.icon-icons.com/icons2/2415/PNG/512/django_line_logo_icon_146560.png">
