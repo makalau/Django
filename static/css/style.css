@@ -1,0 +1,70 @@
+body{
+	background-color: #dddd;
+}
+
+div#principal{
+	margin-top: 40px;
+	width: 1300px;
+	height: 200px;
+	border: solid 3px;
+	position: relative;
+	padding: 20px;
+	background-color: white;
+}
+
+header#cabecalho figure.dog1{
+	position: absolute;
+	top: 140px;
+	left: 220px;
+}
+
+header#cabecalho figure.home{
+	position: absolute;
+	top: 58px;
+	left: 524px;
+}
+
+
+header#cabecalho figure.pastor{
+	position: absolute;
+	top: 70px;
+	left: 900px;
+	
+}
+
+header#cabecalho figure.casinha img{
+	position:absolute;
+	display: block;
+	width:10%;
+	left: 460px;
+	top: 105px;
+}
+
+
+header#cabecalho nav#menu{
+	position: absolute;
+	display: block;
+	left: 420px;
+	top: 216px;
+	text-transform: uppercase;
+}
+header#cabecalho nav#menu li{
+	display: inline-block;
+	background-color: black;
+	padding: 8px;
+	margin: 8px;
+}
+
+header#cabecalho nav#menu li:hover{
+	background-color: #f6b11c;
+}
+
+header#cabecalho nav#menu a:hover{
+	color: black;
+	font-weight: bold;
+}
+header#cabecalho nav#menu a{
+	color: white;
+	font-weight: bold;
+	text-decoration: none;
+}
