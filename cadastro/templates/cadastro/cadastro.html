@@ -1,56 +1,105 @@
-{% load static %}
+{% extends 'base.html' %}
+{% block title %} Consultar Clientes {% endblock %}
 
 
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>home</title>
-<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
-</head>
-<script>
-	function mudaFoto(foto){
-		document.getElementById("icone").src = foto;
-	}
-</script>
 
-<body>
-	<div id="principal">
-		<header id="cabecalho">
+{% block content %}
+
+<div class="cadastro">
+<!--<i class="fas fa-plus"></i> Adicionar Clientes-->
+<h1 id="titulo">Cadastro de clientes</h1>
+<h3 id="subtitulo">Insira os dados do cliente</h3>
+
+	<form>
 		
-			<figure class="dog1">
-			<img src="{% static 'images\real_dog3.png' %}" alt='cachorro'>
-			</figure>
+		<fieldset class="grupo">
+			<div class="campo">
+				<label for="nome"><strong>Nome</strong></label>
+				<input type="text" id="nome" name="nome" placeholder="Nome Completo" required>
+			</div>
+			<div class="campo">
+				<label for="nascimento"><strong>Nascimento</strong></label>
+				<input type="text" id="nascimento" name="nascimento" placeholder="Nascimento">
+			</div>
+			<div class="campo">
+				<label for="email"><strong>Email</strong></label>
+				<input type="email" id="email" name="email" placeholder="E-mail">
+			</div>
+			<div class="campo">
+				<label for="telefone"><strong>Telefone</strong></label>
+				<input type="text" id="email" name="telefone" placeholder="ex: 11954082519" required>
+			</div>
+			<div class="campo">
+				<label for="endereco"><strong>Endereço</strong></label>
+				<input type="text" id="endereco" placeholder="Rua da sorte">
+			</div>
+			<div class="campo">
+				<label for="numero"><strong>Número</strong></label>
+				<input type="text" id="numero" name="número" placeholder="Número da casa">
+				
+			</div>
 			
-			<figure class="home">
-			<img src="{% static 'images\home_dog.png' %}" alt="home_dog">
-			</figure>
+			<div class="campo">
+				<label for="bairro"><strong>Bairro</strong></label>
+				<input type="text" id="bairro" name="bairro" placeholder="Bairro">	
+			</div>
 			
-			<figure class="pastor">
-			<img src="{% static 'images\pastor2.png' %}" alt="pastor" id="pastor1">
-			</figure>
+			<div class="campo">
+				<label for="CEP"><strong>CEP</strong></label>
+				<input type="text" id="cep" name="CEP" placeholder="123-000">
+			</div> 
+			<div class="campo">
+				<br>
+				<label><strong>Deixe observações caso desejar:</strong></label>
+				<textarea row="6" style="width: 50em" id="observation" name="observações"></textarea>
+			</div>
+		</fieldset>
+			<h1 id="titulo2">Dados do animal de estimação</h1>
+			<h3 id="subtitulo2">Preencha os campos relacionados ao animal</h3>
+			<fieldset class="grupo2">
+				<div class="campo">
+					<label for="especie" ><strong>Espécie do animal</strong></label>
+					<label for="cachorro">
+					<strong>
+					<input type="radio" name="especie" value="Cachorro" checked>Cachorro
+					</strong>
+					</label>
+					<label for="gato">
+					<strong>
+					<input type="radio" name="especie" value="Gato">Gato
+					</strong>
+					</label>
+				</div>
+			<div class="campo">
+				<label for="raca" style="background-color: orange;padding: 1px;margin:1px;text-align: center;border-radius: 5px;color: black;"><strong>Raça</strong></label>
+				<input type="text" id="raca" name="raca" placeholder="ex: PitBull">
+			</div>
+			<div class="campo">
+				<label for="porte" style="background-color: orange;margin:0px;text-align: center;border-radius: 5px;color: black;"><strong>&nbsp;&nbsp;&nbsp;Porte</strong></label>
+				
+				<label for="grande">
+				<strong>
+				<input type="radio" name="porte" value="Grande" checked>Grande
+				</strong>
+				</label>
+				
+				<label for="medio">
+				<strong>
+				<input type="radio" name="porte" value="Médio">Médio
+				</strong>
+				</label>
+				
+				<label for="pequeno">
+				<strong>
+				<input type="radio" name="porte" value="Pequeno">Pequeno
+				</strong>
+				</label>
+				
+			</div>
 			
-			<figure class="letras">
-			<img src="{% static 'images/dog_style.png' %}" alt="dog_style">
-			</figure>
-			
-			<figure class="casinha">
-			<img id="icone" src="{% static 'images/casinha.png' %}" alt="casinha">
-			</figure>
-			
-			<nav id="menu">
-			
-				<ul type="none">
-					<li onmouseover="mudaFoto('{% static "images/cadastrar.png" %}')" onmouseout="mudaFoto('{% static "images/casinha.png" %}')"><a href="cadastro.html">cadastrar</a></li>
-					<li onmouseover="mudaFoto('{% static "images/inserir.png" %}')" onmouseout="mudaFoto('{% static "images/casinha.png" %}')"><a href="inserir.html">inserir</a></li>
-					<li onmouseover="mudaFoto('{% static "images/lupa.png" %}')" onmouseout="mudaFoto('{% static "images/casinha.png" %}')"><a href="consultar.html">Consultar</a></li>
-					<li onmouseover="mudaFoto('{% static "images/deletar1.png" %}')" onmouseout="mudaFoto('{% static "images/casinha.png" %}')"><a href="deletar.html">Deletar</a></li>
-				</ul>
-			</nav>
-		</header>
-	</div>
-	
-</body>
+		</fieldset>
+			<button class="botao" type="submit">Cadastrar</button>
+	</form>
+</div>
 
-</html>
+{% endblock %}

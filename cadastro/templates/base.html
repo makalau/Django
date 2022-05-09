@@ -1,0 +1,65 @@
+{% load static %}
+
+<!DOCTYPE HTML>
+<html lang="pt-br">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{% block title %} {% endblock %}</title>
+<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+<script src="https://kit.fontawesome.com/413e1b4429.js" crossorigin="anonymous"></script>
+<script src="{% static 'js/scripts.js' %}"></script>
+</head>
+
+
+<body>
+	<style>
+		body {
+		  background-size: 100% 100%;
+		  background-repeat: no-repeat;
+		  background-attachment: fixed;
+		  background-image: url("{% static 'images\fundo3.jpg' %}");
+		  
+		}
+	</style>
+		<div id="principal">
+			<header id="cabecalho">
+			
+				<figure class="dog1">
+				<img src="{% static 'images\real_dog3.png' %}" alt='cachorro'>
+				</figure>
+				
+				<figure class="home">
+				<img src="{% static 'images\home_dog.png' %}" alt="home_dog">
+				</figure>
+				
+				<figure class="pastor">
+				<img src="{% static 'images\pastor2.png' %}" alt="pastor" id="pastor1">
+				</figure>
+				
+				<figure class="letras">
+				<img src="{% static 'images/dog_style.png' %}" alt="dog_style">
+				</figure>
+				
+				<figure class="casinha">
+				<img id="icone" src="{% static 'images/casinha.png' %}" alt="casinha">
+				</figure>
+				
+				<nav id="menu">
+				
+					<ul type="none">
+						<li onmouseover="mudaFoto('{% static "images/lupa.png" %}')" onmouseout="mudaFoto('{% static "images/casinha.png" %}')"><a href="consultar.html">Consultar</a></li>
+						<li onmouseover="mudaFoto('{% static "images/inserir.png" %}')" onmouseout="mudaFoto('{% static "images/casinha.png" %}')"><a href="cadastro.html">cadastrar</a></li>
+						<li onmouseover="mudaFoto('{% static "images/editar.png" %}')" onmouseout="mudaFoto('{% static "images/casinha.png" %}')"><a href="editar.html">Editar</a></li>
+						<li onmouseover="mudaFoto('{% static "images/deletar1.png" %}')" onmouseout="mudaFoto('{% static "images/casinha.png" %}')"><a href="deletar.html">Deletar</a></li>
+					</ul>
+				</nav>
+			</header>
+			{% block content %}
+			
+			{% endblock %}
+		</div>
+</body>
+
+</html>

@@ -1,12 +1,11 @@
-body{
-	background-color: #dddd;
-}
-
 div#principal{
-	margin-top: 40px;
-	width: 1300px;
+	margin-left: 20px;
+	margin-top: -7px;
+	width: 1250px;
 	height: 200px;
-	border: solid 3px;
+	border-radius: 6px;
+	border: 2px solid black;
+	box-shadow: 53px solid black;
 	position: relative;
 	padding: 20px;
 	background-color: white;
@@ -14,21 +13,21 @@ div#principal{
 
 header#cabecalho figure.dog1{
 	position: absolute;
-	top: 140px;
-	left: 220px;
+	top: 130px;
+	left: 185px;
 }
 
 header#cabecalho figure.home{
 	position: absolute;
 	top: 58px;
-	left: 524px;
+	left: 480px;
 }
 
 
 header#cabecalho figure.pastor{
 	position: absolute;
-	top: 70px;
-	left: 900px;
+	top: 60px;
+	left: 870px;
 	
 }
 
@@ -36,21 +35,23 @@ header#cabecalho figure.casinha img{
 	position:absolute;
 	display: block;
 	width:10%;
-	left: 460px;
-	top: 105px;
+	left: 425px;
+	top: 111px;
 }
 
 
 header#cabecalho nav#menu{
 	position: absolute;
 	display: block;
-	left: 420px;
+	left: 385px;
 	top: 216px;
 	text-transform: uppercase;
 }
 header#cabecalho nav#menu li{
 	display: inline-block;
-	background-color: black;
+	border-radius: 5px;
+	box-shadow: 0px 1px 3px darkred;
+	background: black;
 	padding: 8px;
 	margin: 8px;
 }
@@ -62,9 +63,123 @@ header#cabecalho nav#menu li:hover{
 header#cabecalho nav#menu a:hover{
 	color: black;
 	font-weight: bold;
+	text-decoration: underline;
 }
 header#cabecalho nav#menu a{
 	color: white;
 	font-weight: bold;
 	text-decoration: none;
+}
+.cadastro{
+background-color: #dddd;
+border-radius: 8px;
+border: 2px solid rgba(0,0,0,0.3);
+box-shadow: 5px white;
+width: 80%;
+float: center;
+position: absolute;
+left: 150px;
+top: 330px;
+}
+
+fieldset{
+	padding: 5px;
+	margin-left: 85px;
+	align: center;
+}
+input{
+	text-align: center;
+	border: solid 1px black;
+	font-size: 15px;
+	padding: 6px;
+}
+
+#titulo, #titulo2{
+	position: relative;
+	color: orange;
+	font-size: 40px;
+	text-shadow: 2px 1px black;
+	text-align: center;
+	margin-bottom: 0px;
+}
+#subtitulo, #subtitulo2{
+	font-family: sans-serif;
+	margin-top: 0px;
+	position: relative;
+	color: #474A51;
+	font-size: 30px;
+	text-shadow: 1px 1px black;
+	text-align: center;	
+}
+
+fieldset{
+	border: 0;
+}
+
+input, textarea, button {
+	border-radius: 5px;
+}
+
+.campo {
+	margin-bottom: 1em;
+	
+}
+.campo label {
+	font-family: arial;
+	margin-bottom: 0.2em;
+	margin-left: 55px;
+	color: #black;
+	text-shadow: 1px 1px 1px #dddddd;
+	display: block;
+	font-size: 18px;
+}
+fieldset.grupo .campo{
+		float: left;
+		margin-right: 1em;
+}
+.campo input[type="text"], .campo input[type="email"],.campo textarea{
+	border: 1px solid black;
+	box-shadow: 2px 2px 2px black;
+	display: block;
+}
+
+.campo input:focus, .campo textarea:focus{
+	background: #E0E0F8;
+}
+.botao {
+	font-size: 1.2em;
+	background: black;
+	border: 0;
+	margin-bottom: 5px;
+	color: #ffffff;
+	padding: 0.3em 0.6em;
+	box-shadow: 2px 3px 5px #ffffff;
+	text-shadow: 1px 1px 1px black;
+	position: absolute;
+	top: 97%;
+	left: 50%;
+	cursor: pointer;
+	transform: translate(-50%, -50%);
+}
+
+.botao:hover{
+	background-color: darkgreen;
+	color: white;
+}
+textarea{
+	height: 70px;
+	font-family: sans-serif;
+	font-size: 15px;
+	padding-left: 20px;
+}
+
+fieldset.grupo2 .campo{
+		float: left;
+		margin-right: 1em;
+}
+fieldset.grupo2{
+		position: relative;
+		display:block;
+		left: 100px;
+		margin-right: 1em;
 }
