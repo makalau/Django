@@ -1,7 +1,9 @@
-﻿from django.shortcuts import render
+﻿from django.shortcuts import render, get_object_or_404
+from .models import Cadastro
 
-def home(request):
-    return render(request, 'cadastro\home.html')
-
+def consultar(request):
+    return render(request, 'cadastro/consultar.html')
+    
 def cadastro(request):
-    return render(request, "cadastro\cadastro.html")
+    
+    return render(request, "cadastro/cadastro.html")
