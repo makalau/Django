@@ -9,8 +9,8 @@
 <!--<i class="fas fa-plus"></i> Adicionar Clientes-->
 <h1 id="titulo">Cadastro de clientes</h1>
 <h3 id="subtitulo">Insira os dados do cliente</h3>
-
-	<form>
+	<form action="{% url 'cadastro' %}" method="post">
+			{% csrf_token %}
 		<fieldset class="grupo">
 			<div class="campo">
 				<label for="nome"><strong>Nome</strong></label>
