@@ -50,7 +50,7 @@ header#cabecalho nav#menu{
 header#cabecalho nav#menu li{
 	display: inline-block;
 	border-radius: 5px;
-	box-shadow: 0px 1px 3px darkred;
+	box-shadow: 0px 1px 3px babyblue;
 	background: black;
 	padding: 8px;
 	margin: 8px;
