@@ -3,5 +3,34 @@
 {% block title %}Home {% endblock %}
 
 {% block content %}
-{{context}}
+	<div class="consulta">
+	<h1 id="titulo"> Digite os dados do cliente à ser consultado:<h1>
+		<form method="GET">
+		{% csrf_token %}
+		<fieldset class="grupo">
+			<div class="campo">
+				<input type="text" id="nome" name="nome" placeholder="Nome do cliente">
+			</div>
+			<div class="campo">
+				<input type="text" id="Matrícula" name="matricula" placeholder="Número da matrícula">
+			</div>
+			<div class="campo">
+				<input type="text" id="CPF" name="CPF" placeholder="CPF do cliente">
+			</div>
+				<button class="botão" type="submit">Buscar</button>
+			</div>
+		</fieldset>
+	</div>
+	{% if consulta %}
+	<div class="results">
+		<hr>
+		{% for valor in consulta %}
+		<ul type="None">
+			<li><a href="/search/{{valor.id}}">Telefone: {{valor.telefone}}</a></li>
+			<li><a href="/search/{{valor.id}}">Nome: {{valor.nome}}</a></li>
+		</ul>
+		<hr>
+		{% endfor %}
+	</div>
+	{% endif %}
 {% endblock %}

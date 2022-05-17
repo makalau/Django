@@ -2,8 +2,18 @@ from django.shortcuts import render, get_object_or_404, redirect
 from .models import Cadastro
 
 def consultar(request):
-    return render(request, 'cadastro/consultar.html')
+    nome = request.GET.get("nome")
+    if nome:
+        consulta = Cadastro.objects.all().filter(nome__icontains=nome)
+        return render(request, "cadastro/consultar.html", {"consulta":consulta})
     
+    else:
+        return render(request, "cadastro/consultar.html")
+
+def search(request, id):
+    consulta = get_object_or_404(Cadastro, pk=id)
+    return render(request, "cadastro/search.html", {"consulta":consulta})
+        
 def cadastro(request):
     if request.method == "POST":
         nome = request.POST['nome']
@@ -20,4 +30,8 @@ def cadastro(request):
         return redirect("/")
     else:
         return render(request, "cadastro/cadastro.html")
-    
+        
+        
+
+def deletar(request):
+    return render(request, "cadastro/deletar.html")

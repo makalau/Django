@@ -183,3 +183,47 @@ fieldset.grupo2{
 		left: 100px;
 		margin-right: 1em;
 }
+.consulta{
+
+background-color: rgba(0,0,0,0.2);
+border-radius: 8px;
+border: 2px solid rgba(0,0,0,0.2);
+box-shadow: 5px white;
+width: 540px;
+float: center;
+position: relative;
+left: 400px;
+top: 130px;
+}
+
+.camp input {
+
+	margin-bottom: 10px;
+	margin-top: 10px;
+	position: relative;
+	left: -48px;
+	margin-left: 12px;
+}
+
+.results{
+background-color: white;
+border-radius: 8px;
+border: 2px solid rgba(0,0,0,0.2);
+box-shadow: 5px white;
+width: 540px;
+position: relative;
+left: 445px;
+top: 490px;
+}
+.results a{
+	text-decoration: None;
+}
+.results li {
+	display: inline-block;
+	padding-left: 15px;
+	margin: 5px;
+	position: relative;
+	left: -30px;
+	font-size: 17px;
+	text-decoration: None;
+}
