@@ -38,12 +38,14 @@ def cadastro(request):
 def editar(request, id):
     consulta = get_object_or_404(Cadastro, pk=id)
     if(request.method == "POST"):
-        return false
+        deletar(id)
     
     else:
         return render(request, "cadastro/editar.html", {"consulta":consulta})
     
     
     
-def deletar(request):
-    return render(request, "cadastro/deletar.html")
+def deletar(request, id):
+    campo = get_object_or_404(Cadastro, pk=id)
+    campo.delete()
+    return redirect("/")
