@@ -24,14 +24,26 @@ def cadastro(request):
         numero = request.POST['numero']
         bairro = request.POST['bairro']
         cep = request.POST['cep']
-        obs = request.POST['observation'] 
-        novo_cliente = Cadastro(nome=nome, nascimento=nascimento, email=email, telefone=telefone,local=local, numero=numero, bairro=bairro, cep=cep, obs=obs)
+        obs = request.POST['observation']
+        especie = request.POST['especie']
+        raca = request.POST['raca']
+        porte = request.POST['porte']
+        novo_cliente = Cadastro(nome=nome, nascimento=nascimento, email=email, telefone=telefone,local=local, numero=numero, bairro=bairro, cep=cep, obs=obs, especie=especie, raca=raca, porte=porte)
         novo_cliente.save()
         return redirect("/")
     else:
         return render(request, "cadastro/cadastro.html")
         
         
-
+def editar(request, id):
+    consulta = get_object_or_404(Cadastro, pk=id)
+    if(request.method == "POST"):
+        return false
+    
+    else:
+        return render(request, "cadastro/editar.html", {"consulta":consulta})
+    
+    
+    
 def deletar(request):
     return render(request, "cadastro/deletar.html")
