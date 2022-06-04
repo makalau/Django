@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Cadastro
+from .forms import CadastroForm
 
 def consultar(request):
     nome = request.GET.get("nome")
@@ -12,7 +13,8 @@ def consultar(request):
 
 def search(request, id):
     consulta = get_object_or_404(Cadastro, pk=id)
-    return render(request, "cadastro/search.html", {"consulta":consulta})
+    form = CadastroForm(instance=consulta)   
+    return render(request, "cadastro/search.html", {"form":form, "consulta":consulta})
         
 def cadastro(request):
     if request.method == "POST":
@@ -37,13 +39,20 @@ def cadastro(request):
         
 def editar(request, id):
     consulta = get_object_or_404(Cadastro, pk=id)
+    form = CadastroForm(instance=consulta)   
+    
     if(request.method == "POST"):
-        deletar(id)
-    
+        form = CadastroForm(request.POST, instance=consulta)
+        if (form.is_valid()):
+            form.save()
+            return redirect ("/")
+        else:
+            return render(request, "cadastro/editar.html", {"form":form, "consulta":consulta})
+            
     else:
-        return render(request, "cadastro/editar.html", {"consulta":consulta})
+        return render(request, "cadastro/editar.html", {"form":form, "consulta":consulta})
     
-    
+   
     
 def deletar(request, id):
     campo = get_object_or_404(Cadastro, pk=id)

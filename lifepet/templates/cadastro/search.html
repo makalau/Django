@@ -1,63 +1,92 @@
 {% extends 'base.html' %}
-{% block title %} Consultar Clientes {% endblock %}
+{% block title %}Consulta de Clientes {% endblock %}
 
 
 
 {% block content %}
-
+<div class="block">
 <div class="cadastro">
-<!--<i class="fas fa-plus"></i> Adicionar Clientes-->
-<h1 id="titulo"> Consulta de clientes</h1>
-<h3 id="subtitulo">Edite os dados do cliente caso desejar</h3>
-<h3 id="subtitulo">Dados do cliente</h3>
-		<table border=5 id="cliente">
-	<col>
-	<tr>
-		<th>Nome</th>
-		<th>E-mail</th>
-		<th>Telefone</th>
-		<th>Nascimento</th>
-	<tr>
-	<col>
-	<tr>
-		<td>{{consulta.nome}}</td>
-		<td>{{consulta.email}}</td>
-		<td>{{consulta.telefone}}</td>
-		<td>{{consulta.nascimento}}</td>
-	</tr>
-	<tr>
-		<th>CEP</th>
-		<th>Bairro</th>		
-		<th>Endereço</th>
-		<th>Número</th>	
-	</tr>
-	<tr>
-		<td>{{consulta.cep}}</td>
-		<td>{{consulta.bairro}}</td>		
-		<td>{{consulta.local}}</td>
-		<td>{{consulta.numero}}</td>
-	</tr>
-	</table>
-	{% if consulta.especie %}
-	<hr>
-	<h2 id="subtitulo">Dados do Animal</h2>
-	<table border=5 id="animal">
-		<tr>
-			<th>Espécie</th>
-			<th>Raça</th>
-			<th>porte</th>
+<!--<i class="fas fa-search"></i> -->
+<h1 id="titulo">Dados cadastrais do cliente:</h1>
+<h2 id="subtitulo">{{consulta.nome}}</h2>
+<hr>
+<br>
+<form action="" method="post">
+	{% csrf_token %}
+		<fieldset class="grupo">
+			<div class="campo">
+				<label for="nome"><strong>Nome</strong></label>
+				{{form.nome}}
+			</div>
 			
-		</tr>
-		<tr>
-			<td>{{consulta.especie}}</td>
-			<td>{{consulta.raca}}</td>
-			<td>{{consulta.porte}}</td>
-		</tr>
-	</table>
-	{% endif %}
-	<ul type=None>
-		<li><a href="/deletar/{{consulta.id}}">Deletar Cliente</a></li>
-	</ul>
+			<div class="campo">
+				<label for="nascimento"><strong>Nascimento</strong></label>
+				{{form.nascimento}}
+			</div>
+			
+			<div class="campo">
+				<label for="email"><strong>Email</strong></label>
+				{{form.email}}
+			</div>
+			<div class="campo">
+				<label for="telefone"><strong>Telefone</strong></label>
+				{{form.telefone}}
+			</div>
+			<div class="campo">
+				<label for="local"><strong>Endereço</strong></label>
+				{{form.local}}
+			</div>
+			<div class="campo">
+				<label for="numero"><strong>Número</strong></label>
+				{{form.numero}}
+				
+			</div>
+			
+			<div class="campo">
+				<label for="bairro"><strong>Bairro</strong></label>
+				{{form.bairro}}	
+			</div>
+			
+			<div class="campo">
+				<label for="CEP"><strong>CEP</strong></label>
+				{{form.cep}}
+			</div> 
+		</fieldset>
+			<div class="campotext">
+				<br>
+				<label><strong>Deixe observações caso desejar:</strong></label>
+				{{form.obs}}
+			</div>
+			<br>
+			<br>
+			<hr>
+			<h1 id="titulo2" style="">Dados do animal de estimação</h1>
+			<h2 id="subtitulo">{{form.especie.value}}</h2>
+			<br>
+			<br>
+			<fieldset class="grupo2">
+				<div class="campo">
+					<label for="especie" style="background-color: orange; border-radius: 5px;"><strong>&nbsp; &nbsp; &nbsp;Espécie do animal</strong></label>
+						<label for="cachorro">
+							<strong>
+							{{form.especie}}
+							</strong>
+						</label>
+				</div>
+			<div class="campo">
+				<label for="raca" style="background-color: orange;padding: 1px;margin:1px;text-align: center;border-radius: 5px;color: black;"><strong>Raça</strong></label>
+				{{form.raca}}
+			</div>
+			<div class="campo">
+				<label for="porte" style="background-color: orange;margin:0px;text-align: center;border-radius: 5px;color: black;"><strong>&nbsp;&nbsp;&nbsp;Porte</strong></label>
+				<strong>
+				{{form.porte}}
+				</strong>
+				</label>
+			</div>			
+	</fieldset>
+</form>
+</div>
 </div>
 
 {% endblock %}

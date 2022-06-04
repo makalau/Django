@@ -4,22 +4,19 @@
 
 {% block content %}
 	<div class="consulta">
-	<h1 id="titulo"> Digite os dados do cliente à ser consultado:<h1>
+	<h1 id="titulo" style="background-color: #274360;color: white;margin-top: 0px;border-radius: 5px;border: 1px solid black;"> Digite os dados do cliente à ser consultado:<h1>
 		<form method="GET">
 		{% csrf_token %}
-		<fieldset class="grupo">
-			<div class="campo">
-				<input type="text" id="nome" name="nome" placeholder="Nome do cliente">
-			</div>
-			<div class="campo">
-				<input type="text" id="Matrícula" name="matricula" placeholder="Número da matrícula">
-			</div>
-			<div class="campo">
-				<input type="text" id="CPF" name="CPF" placeholder="CPF do cliente">
-			</div>
-				<button class="botão" type="submit">Buscar</button>
-			</div>
-		</fieldset>
+		<div class="search">
+			<i class="fas fa-search"></i>
+			<input type="text" name="search" id="search" placeholder="Digite o valor a ser consultado">
+			<select name="select">
+				  <option value="nome">Nome</option>
+				  <option value="telefone" selected>Telefone</option>
+				  <option value="email">E-mail</option>
+				</select>
+			<input type="submit" value="Pesquisar" style="display: None;">
+		</div>
 	</div>
 	{% if consulta %}
 	<div class="results">

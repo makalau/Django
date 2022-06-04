@@ -79,7 +79,7 @@ width: 80%;
 float: center;
 padding-bottom: 50px;
 position: absolute;
-left: 150px;
+left: 132px;
 top: 330px;
 }
 
@@ -87,7 +87,9 @@ fieldset{
 	padding: 5px;
 	margin-left: 85px;
 	align: center;
+	border: 0;
 }
+
 input{
 	text-align: center;
 	border: solid 1px black;
@@ -98,8 +100,9 @@ input{
 #titulo, #titulo2{
 	position: relative;
 	color: orange;
+	background-color: #A9A9A9;
 	font-size: 40px;
-	text-shadow: 2px 1px black;
+	text-shadow: 3px 0.5px 0px black;
 	text-align: center;
 	margin-bottom: 0px;
 }
@@ -107,23 +110,23 @@ input{
 	font-family: sans-serif;
 	margin-top: 0px;
 	position: relative;
-	color: #474A51;
+	color: white;
 	font-size: 30px;
-	text-shadow: 1px 1px black;
+	text-shadow: 1px 3px black;
+	background-color: #274360;
 	text-align: center;	
 }
 
-fieldset{
-	border: 0;
-}
 
-input, textarea, button {
+input, textarea, button, .campotext textarea{
 	border-radius: 5px;
+	font-family: Arial, sans-serif;
+	font-size: 16.5px;
 }
 
 .campo {
 	margin-bottom: 1em;
-	
+
 }
 .campo label {
 	font-family: arial;
@@ -135,36 +138,41 @@ input, textarea, button {
 	font-size: 18px;
 }
 fieldset.grupo .campo{
+		position: relative;
 		float: left;
 		margin-right: 1em;
+		left: -28px;
 }
+
 .campo input[type="text"], .campo input[type="email"],.campo textarea{
 	border: 1px solid black;
 	box-shadow: 2px 2px 2px black;
 	display: block;
 }
 
-.campo input:focus, .campo textarea:focus{
+.campo input:focus, .campotext textarea:focus, .campo textarea:focus{
 	background: #E0E0F8;
 }
 .botao {
 	font-size: 1.2em;
-	background: black;
-	border: 0;
+	background: #42426F;
+	border: 1px solid black;
 	margin-bottom: 5px;
 	color: #ffffff;
 	padding: 0.3em 0.6em;
 	box-shadow: 2px 3px 5px #ffffff;
 	text-shadow: 1px 1px 1px black;
 	position: absolute;
-	top: 90%;
-	left: 50%;
+	top: 95%;
+	left: 50.5%;
 	cursor: pointer;
 	transform: translate(-50%, -50%);
 }
 
 .botao:hover{
-	background-color: darkgreen;
+	background-color: #21ABCD;
+	border: 1.5px solid black;
+	text-shadow: 2px 2px 2px black;
 	color: white;
 }
 textarea{
@@ -181,29 +189,66 @@ fieldset.grupo2 .campo{
 fieldset.grupo2{
 		position: relative;
 		display:block;
-		left: 100px;
-		margin-right: 1em;
+		left: 40px;
+		margin-right: 80px;
+		border-radius: 6px;
 }
 .consulta{
 
-background-color: rgba(0,0,0,0.2);
+background-color: #A9A9A9;
 border-radius: 8px;
-border: 2px solid rgba(0,0,0,0.2);
+border: 2px solid black;
 box-shadow: 5px white;
 width: 540px;
 float: center;
 position: relative;
-left: 400px;
+left: 370px;
 top: 130px;
 }
+.consulta input{
+	position: relative;
+	left: 0px;
+	width: 430px;
+}
+.consulta select{
+	position: relative;
+	left: 464px;
+	font-size: 12px;
+	font-weight: bold;
+	width: 72px;
+	border-radius: 3px;
+	border: 1px solid black;
+	height: 33.3px;
+	top: -42px;
+	background-color: white;
+}
 
+.consulta select *{
+	font-size: 15px;
+	color: black;
+}
 .camp input {
-
 	margin-bottom: 10px;
 	margin-top: 10px;
 	position: relative;
 	left: -48px;
 	margin-left: 12px;
+}
+
+.fas {
+	font-size: 25.6px;
+	padding: 2px;
+	position: relative;
+	background-color: white;
+	border: 1px solid black;
+	left: 9.3px;
+	top: 3.4px;
+	border-radius: 3px;
+}
+
+.search {
+	position:relative;
+	top: 25px;
 }
 
 .results{
@@ -246,3 +291,34 @@ table th{
 table tr{
 	background-color: white;
 }
+
+div.campotext {
+	position: relative;
+	width: 50%;
+	height: 100px;
+	display: block;
+	top: -5px;
+	left: 240px;
+}
+div.campotext textarea{
+	border: 2px solid black;
+	width: 100%;
+}
+	
+.campotext label{
+	font-family: arial;
+	margin-bottom: 0.2em;
+	margin-left: 110px;
+	color: #black;
+	text-shadow: 1px 1px 1px #dddddd;
+	display: block;
+	font-size: 18px;
+}
+
+/*Tentando colocar uma div para tampar o preenchimento e alteração no template de search. */
+.block {
+	display: block;
+	background-color: red;
+	width: 50px;
+	heigth: 50px;
+ }
