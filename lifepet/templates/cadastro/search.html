@@ -4,13 +4,20 @@
 
 
 {% block content %}
+{% load static %}
 <div class="block">
 <div class="cadastro">
-<!--<i class="fas fa-search"></i> -->
 <h1 id="titulo">Dados cadastrais do cliente:</h1>
 <h2 id="subtitulo">{{consulta.nome}}</h2>
 <hr>
 <br>
+<hgroup id="icones" style="position: relative; 	left: 446px;top: -24px;">
+<i class="fas fa-edit" style="cursor: pointer; color: green;width: 30px;" id="editar" onclick="buscar({{consulta.id}});" style="margin-top: 0px;"></i>
+<!--<p style="display:inline-block; position: relative; top: -27px; left: -35px;">Editar</p>-->
+<i class="fas fa-trash" style="cursor: pointer;color: darkred;left: 50px; width: 30px;" onclick="deletar({{consulta.id}});"></i>
+<!--<p style="display:inline-block; position: relative; top: -27px; left: 2px;">Deletar</p>-->
+</hgroup>
+
 <form action="" method="post">
 	{% csrf_token %}
 		<fieldset class="grupo">
@@ -88,5 +95,4 @@
 </form>
 </div>
 </div>
-
 {% endblock %}

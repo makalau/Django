@@ -3,31 +3,46 @@
 {% block title %}Home {% endblock %}
 
 {% block content %}
+<div class="cabecalho">
+
 	<div class="consulta">
 	<h1 id="titulo" style="background-color: #274360;color: white;margin-top: 0px;border-radius: 5px;border: 1px solid black;"> Digite os dados do cliente à ser consultado:<h1>
-		<form method="GET">
+		<form method="GET" id="form-pesquisa">
 		{% csrf_token %}
-		<div class="search">
-			<i class="fas fa-search"></i>
-			<input type="text" name="search" id="search" placeholder="Digite o valor a ser consultado">
-			<select name="select">
-				  <option value="nome">Nome</option>
-				  <option value="telefone" selected>Telefone</option>
-				  <option value="email">E-mail</option>
+			<div class="search">
+				<i class="fas fa-search" id="icone-pesquisa" onmouseclick="buscar()"></i>
+				<input type="text" name="search" id="barra-pesquisa" placeholder="Digite o valor a ser consultado">
+				<select name="select">
+					  <option value="nome" selected>Nome</option>
+					  <option value="telefone">Telefone</option>
+					  <option value="email">E-mail</option>
 				</select>
-			<input type="submit" value="Pesquisar" style="display: None;">
-		</div>
+			</div>
+		</form>
 	</div>
 	{% if consulta %}
 	<div class="results">
-		<hr>
 		{% for valor in consulta %}
-		<ul type="None">
-			<li><a href="/search/{{valor.id}}">Telefone: {{valor.telefone}}</a></li>
-			<li><a href="/search/{{valor.id}}">Nome: {{valor.nome}}</a></li>
-		</ul>
-		<hr>
+		<a href="/search/{{valor.id}}" style="color: black; text-decoration:None;">
+			<table>
+			<COLGROUP span=3 width="126">
+			<tr nowrap>
+				<th>MATRÍCULA</th>
+				<th>NOME</th>
+				<th>TELEFONE</th>
+				<th>ENDEREÇO</th>
+				
+			</tr>
+			<tr nowrap>
+				<td style="width: 1%;"> {{valor.id}}</td>
+				<td nowrap style="width: 32.6%;">{{valor.nome}}</td>
+				<td>{{valor.telefone}}</td>
+				<td>{{valor.local}}</td>
+			</tr>
+			</table>
+		</a>
 		{% endfor %}
 	</div>
 	{% endif %}
+</div>
 {% endblock %}
