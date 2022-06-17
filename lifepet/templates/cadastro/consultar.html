@@ -25,16 +25,16 @@
 		{% for valor in consulta %}
 		<a href="/search/{{valor.id}}" style="color: black; text-decoration:None;">
 			<table>
-			<COLGROUP span=3 width="126">
+			<!--COLGROUP span=-3 width="126"-->
 			<tr nowrap>
-				<th>MATRÍCULA</th>
+				<th style="width: auto;">Nº.</th>
 				<th>NOME</th>
 				<th>TELEFONE</th>
 				<th>ENDEREÇO</th>
 				
 			</tr>
 			<tr nowrap>
-				<td style="width: 1%;"> {{valor.id}}</td>
+				<td> {{valor.id}}</td>
 				<td nowrap style="width: 32.6%;">{{valor.nome}}</td>
 				<td>{{valor.telefone}}</td>
 				<td>{{valor.local}}</td>

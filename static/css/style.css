@@ -1,8 +1,7 @@
 div#principal{
-	margin-left: 20px;
-	margin-top: -7px;
-	width: 1250px;
-	height: 200px;
+	margin: -10px auto 20px auto;
+	width: 1280px;
+	height: 170px;
 	border-radius: 6px;
 	border: 2px solid black;
 	box-shadow: 53px solid black;
@@ -13,21 +12,23 @@ div#principal{
 
 header#cabecalho figure.dog1{
 	position: absolute;
-	top: 130px;
-	left: 185px;
+	top: 90px;
+	left: 159px;
 }
 
 header#cabecalho figure.home{
 	position: absolute;
-	top: 50px;
-	left: 480px;
+	top: 18px;
+	left: 465px;
 }
+
+
 
 
 header#cabecalho figure.pastor{
 	position: absolute;
-	top: 60px;
-	left: 870px;
+	top: 35px;
+	left: 830px;
 	
 }
 
@@ -35,14 +36,19 @@ header#cabecalho figure.casinha img{
 	position:absolute;
 	display: block;
 	width:10%;
-	left: 425px;
-	top: 111px;
+	left: 403px;
+	top: 79px;
+}
+
+figure.letras img{
+	top: -12px;
+	left: 1px;
 }
 
 header#cabecalho nav#menu{
 	position: absolute;
-	left: 490px;
-	top: 216px;
+	left: 489px;
+	top: 186px;
 	text-transform: uppercase;
 }
 header#cabecalho nav#menu li{
@@ -120,6 +126,7 @@ input, textarea, button, .campotext textarea{
 	border-radius: 5px;
 	font-family: Arial, sans-serif;
 	font-size: 16.5px;
+	background-color: white;
 }
 
 .campo {
@@ -130,7 +137,7 @@ input, textarea, button, .campotext textarea{
 	font-family: arial;
 	margin-bottom: 0.2em;
 	margin-left: 55px;
-	color: #black;
+	color: black;
 	text-shadow: 1px 1px 1px #dddddd;
 	display: block;
 	font-size: 18px;
@@ -139,18 +146,19 @@ fieldset.grupo .campo{
 		position: relative;
 		float: left;
 		margin-right: 1em;
-		left: -28px;
+		left: -23px;
 }
 
 .campo input[type="text"], .campo input[type="email"],.campo textarea{
 	border: 1px solid black;
-	box-shadow: 2px 2px 2px black;
+	box-shadow: 1px 1px 1px black;
 	display: block;
 }
 
 .campo input:focus, .campotext textarea:focus, .campo textarea:focus{
 	background: #E0E0F8;
 }
+
 .botao {
 	font-size: 1.2em;
 	background: #42426F;
@@ -192,32 +200,33 @@ fieldset.grupo2{
 		border-radius: 6px;
 }
 .consulta{
-
 background-color: #A9A9A9;
 border-radius: 8px;
-border: 2px solid black;
+border: 3px solid rgb(20, 20, 20);
 box-shadow: 5px white;
 width: 540px;
 float: center;
 position: relative;
-left: 370px;
-top: 130px;
+left: 375px;
+top: 350px;
 }
+
 .consulta input{
 	position: relative;
 	left: 0px;
 	width: 430px;
 }
+
 .consulta select{
 	position: relative;
-	left: 464px;
+	left: 474px;
 	font-size: 12px;
 	font-weight: bold;
-	width: 72px;
+	width: 65px;
 	border-radius: 3px;
 	border: 1px solid black;
-	height: 33.3px;
-	top: -42px;
+	height: 32px;
+	top: -40.0px;
 	background-color: white;
 }
 
@@ -246,34 +255,24 @@ top: 130px;
 
 .search {
 	position:relative;
-	top: 25px;
+	top: 25.5px;
+	right: 4px;
 }
 
-/*
-Editando a div do consultar:
-
-.cabecalho{
-	position: absolute;
-	background-color: white;
-	width: 80%;
-	left: 200px;
-	
-}
-*/
 
 .results{
-background-color: black;
-border-radius: 1px;
-border: 2px solid #A4A4A4;
-width: 521px;
-position: relative;
-left: 380px;
-top: 131px;
-
-}
+	width: 661px;
+	position: relative;
+	margin: 50px auto 20px auto;
+	top: 301px;
+	left: 2px;
+	}
 
 table {
+	border: 1px solid black;
+	background-color: black;
 	position: relative;
+	padding: 0px;
 	float: center;
 	width: 100%;
 }
@@ -307,16 +306,8 @@ div.campotext textarea{
 	font-family: arial;
 	margin-bottom: 0.2em;
 	margin-left: 110px;
-	color: #black;
+	color: black;
 	text-shadow: 1px 1px 1px #dddddd;
 	display: block;
 	font-size: 18px;
 }
-
-/*Tentando colocar uma div para tampar o preenchimento e alteração no template de search. */
-.block {
-	display: block;
-	background-color: red;
-	width: 50px;
-	heigth: 50px;
- }

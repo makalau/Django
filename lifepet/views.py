@@ -42,7 +42,7 @@ def cadastro(request):
         porte = request.POST['porte']
         novo_cliente = Cadastro(nome=nome, nascimento=nascimento, email=email, telefone=telefone,local=local, numero=numero, bairro=bairro, cep=cep, obs=obs, especie=especie, raca=raca, porte=porte)
         novo_cliente.save()
-        return redirect("/")
+        return redirect("/cadastro/")
     else:
         return render(request, "cadastro/cadastro.html")
         
@@ -52,11 +52,11 @@ def editar(request, id):
     form = CadastroForm(instance=consulta)   
     if request.method == "POST":
         form = CadastroForm(request.POST, instance=consulta)
-        if (form.is_valid()):
+        if form.is_valid():
             form.save()
-            return redirect ("/")
+            return redirect("/")
         else:
-            return render(request, "cadastro/Error", {"form":form, "consulta":consulta})
+            return render(request, "cadastro/editar.html", {"form":form, "consulta":consulta})
             
     else:
         return render(request, "cadastro/editar.html", {"form":form, "consulta":consulta})
